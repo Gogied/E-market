@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <ul class="list-group">
+                <h1 class=" display-2 text-center">Mis publicaciones</h1>
+                {% for producto in productos %}
+                <li class="list-group-item">
+                    <p>{{producto.titulo}}</p>
+                    <p>estado: {{producto.estado_id}}</p>
+                    <p>precio: {{producto.precio}}</p>
+                    <p>vendedor: {{producto.user.username}}</p>
+                    <p>Fono contacto: {{producto.contacto}}</p>
+                    <p>Categoria: {{categoria_id}}</p>
+                    <p>Envio: {{envio_id}}</p>
+                    <p><a href="{% url 'editarpubli' producto.id%}">Editar</a> <a href="{%url 'eliminarpubli' producto.id%}">Eliminar</a></p>
+                </li>
+            
+                {% endfor %}
+ 
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+

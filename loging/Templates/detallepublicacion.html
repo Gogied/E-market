@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<h3>Edita tu publicacion</h3>
+    {{error}}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button>
+            Save
+        </button>
+
+
+    </form>
+
+{% endblock %} 

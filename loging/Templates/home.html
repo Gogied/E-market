@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <ul class="list-group">
+                <h1 class=" display-2 text-center">Productos</h1>
+                {% for producto in productos %}
+                <li class="list-group-item">
+                    <h3>{{producto.titulo}}</h3>
+                    <p>{{producto.descripcion}}</p>
+                    <p>{{producto.categoria_id}}</p>
+                    <p>estado: {{producto.estado_id}}</p>
+                    <p>precio: {{producto.precio}}</p>
+                    <p>vendedor: {{producto.user.username}}</p>
+                    <p>Fono contacto: {{producto.contacto}}</p>
+                    <p>Envio: {{producto.envio_id}}</p>
+                </li>
+            
+                {% endfor %}
+ 
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
